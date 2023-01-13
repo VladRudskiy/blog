@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{title}}</title>
+	<link type="text/css" href="{% static 'artist/css/styles.css' %}" rel="stylesheet" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<table class="table-page" border=0 cellpadding="0" cellspacing="0">
+<tr><td valign=top>
+{% block mainmenu %}
+		<div class="header">
+			<ul id="mainmenu" class="mainmenu" >
+			<li class="logo"><a href="{% url 'home' %}"><div class="logo"><img src="{% static 'artist/images/preview_image20210823-13786-xxojpv.png'%}" alt=""></div></a></li>
+{% for m in menu %}
+			<li><a href="{% url m.url_name %}">{{m.title}}</a></li>
+{% endfor %}
+			</ul>
+			<div class="clear"></div>
+		</div>
+{% endblock mainmenu %}
+
+<table class="table-content" border=0 cellpadding="0" cellspacing="0">
+<tr>
+	<td valign="top" class="content">
+
+	<div class="content-text">
+{% block content %}
+{% endblock %}
+	</div>
+
+</td></tr></table>
+</td></tr>
+
+
+<tr><td valign=top>
+	<div id="footer">
+		<p>@2023 Часткове чи повне копіювання інформації з цього сайту для росповсюдження на інших ресурсах, і в тому  числі  паперових, сурово заборонено.</p>
+	</div>
+</td></tr></table>
+
+</body>
+</html>
