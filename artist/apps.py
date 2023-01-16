@@ -1,7 +1,6 @@
 from django.apps import AppConfig
 
 
-class artistConfig(AppConfig):
-    default_auto_field = 'django.db.models.BigAutoField'
+class ArtistConfig(AppConfig):
     name = 'artist'
-    verbose_name = "Статьи"
+    verbose_name = 'Артисти світу'
